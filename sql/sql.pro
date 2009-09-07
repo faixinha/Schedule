@@ -3,9 +3,13 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += .
 
 # Input
-SOURCES += main.cpp
+SOURCES += \
+	main.cpp \
+	schedule.cpp \
+
+HEADERS += \
+	schedule.h \ 
