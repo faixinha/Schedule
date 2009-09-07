@@ -10,6 +10,10 @@ class Schedule : public QDialog
 public:
     Schedule();
 
+public slots:
+    void registerForm();
+    void searchContact();
+    void sairClicked();
 };
 
 #endif // SCHEDULE_H

@@ -27,5 +27,25 @@ Schedule::Schedule() : QDialog(0)
     layout->addWidget(box);
 
     setWindowTitle("AGENDA");
+
+    connect(button, SIGNAL(clicked()), this, SLOT(sairClicked()));
+    //connect(button, SIGNAL(clicked()), qApp, SLOT(aboutQt()));
+    connect(button, SIGNAL(clicked()), this, SLOT(searchContact()));
+    connect(button, SIGNAL(clicked()), this, SLOT(registerForm()));
+}
+
+void Schedule::registerForm()
+{
+    /* TODO */
+}
+
+void Schedule::searchContact()
+{
+    /* TODO */
+}
+
+void Schedule::sairClicked()
+{
+    QWidget::close();
 }
 
