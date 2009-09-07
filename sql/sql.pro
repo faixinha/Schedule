@@ -9,7 +9,9 @@ INCLUDEPATH += .
 # Input
 SOURCES += \
 	main.cpp \
+	register.cpp \
 	schedule.cpp \
 
 HEADERS += \
+	register.h \
 	schedule.h \ 

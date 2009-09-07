@@ -1,5 +1,7 @@
 #include "schedule.h"
 
+#include "register.h"
+
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
@@ -36,7 +38,8 @@ Schedule::Schedule() : QDialog(0)
 
 void Schedule::registerForm()
 {
-    /* TODO */
+    Register *registerContact = new Register(this);
+    registerContact->show();
 }
 
 void Schedule::searchContact()
