@@ -1,7 +1,9 @@
 #include "schedule.h"
 
 #include "register.h"
+#include "search.h"
 
+#include <QApplication>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
@@ -14,27 +16,26 @@ Schedule::Schedule() : QDialog(0)
     QDialogButtonBox *box = new QDialogButtonBox(Qt::Horizontal);
 
     QPushButton *button = new QPushButton("Sair");
+    connect(button, SIGNAL(clicked()), this, SLOT(sairClicked()));
     box->addButton(button, QDialogButtonBox::AcceptRole);
 
     button = new QPushButton("Ajuda");
+    connect(button, SIGNAL(clicked()), qApp, SLOT(aboutQt()));
     box->addButton(button, QDialogButtonBox::AcceptRole);
 
     button = new QPushButton("Consulta");
+    connect(button, SIGNAL(clicked()), this, SLOT(searchContact()));
     box->addButton(button, QDialogButtonBox::AcceptRole);
 
     button = new QPushButton("Cadastro");
+    connect(button, SIGNAL(clicked()), this, SLOT(registerForm()));
     box->addButton(button, QDialogButtonBox::AcceptRole);
 
     layout->addWidget(new QLabel("Agendinha"));
     layout->addWidget(box);
 
     setWindowTitle("AGENDA");
-
-    connect(button, SIGNAL(clicked()), this, SLOT(sairClicked()));
-    //connect(button, SIGNAL(clicked()), qApp, SLOT(aboutQt()));
-    connect(button, SIGNAL(clicked()), this, SLOT(searchContact()));
-    connect(button, SIGNAL(clicked()), this, SLOT(registerForm()));
-}
+   }
 
 void Schedule::registerForm()
 {
@@ -44,7 +45,8 @@ void Schedule::registerForm()
 
 void Schedule::searchContact()
 {
-    /* TODO */
+    Search *search = new Search(this);
+    search->show();
 }
 
 void Schedule::sairClicked()

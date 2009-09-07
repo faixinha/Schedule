@@ -11,7 +11,9 @@ SOURCES += \
 	main.cpp \
 	register.cpp \
 	schedule.cpp \
+	search.cpp \
 
 HEADERS += \
 	register.h \
-	schedule.h \ 
+	schedule.h \
+	search.h \
